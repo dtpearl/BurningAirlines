@@ -6,6 +6,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1>Burning Airlines Coming Soon</h1>
+        <img src="https://thumbs.dreamstime.com/t/crashed-airplane-drawing-part-series-39442050.jpg" alt="Welcome to Burning Airlines" />
       </div>
     );
   }
