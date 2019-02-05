@@ -2,6 +2,7 @@ import React from 'react';
 import { HashRouter as Router, Route } from 'react-router-dom';
 
 // Example imports and <Route/> tags below
+
 // import Home from './components/Home';
 // import FAQ from './components/FAQ';
 // import Character from './components/Character';
