@@ -14,10 +14,16 @@ import { HashRouter as Router, Route } from 'react-router-dom';
 
 // Add your imports here
 import FlightBooking from './components/FlightBooking';
+import Home from './components/Home';
+import Search from './components/Search';
 
 const Routes = (
   <Router>
     <div>
+      <Route component={Home} />
+
+      <Route path="/search" component={Search} />
+
       <Route path="/flights/:id" component={ FlightBooking } />
     </div>
   </Router>
