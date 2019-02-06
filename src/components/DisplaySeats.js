@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class DisplaySeats extends Component {
   constructor(props) {
-    super();
+    super(props);
   }
 
   // This should display the seats on the airplane

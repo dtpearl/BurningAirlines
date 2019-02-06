@@ -2,19 +2,19 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import DisplaySeats from './DisplaySeats';
 
-const SERVER_URL_FLIGHTS = 'http://localhost:3001/flights.json';
-const SERVER_URL_FLIGHT = 'http://localhost:3001/flights/1.json'
+//const SERVER_URL_FLIGHTS = 'http://localhost:3000/flights.json';
+const SERVER_URL_FLIGHT = 'http://localhost:3000/flights/1.json'
 
 class FlightBooking extends Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       // Information sent from Flight search
       // Flight ID, plane information
       planeID: 1,
-      seats: 12,
+      seats: 0,
       // Information handled in FlightBooking
-      seatsBooked: Array(12).fill('Available')
+      seatsBooked: []
       // Array with null values (or 'available') for each seat on the airplane. Array(rows * cols).fill(null)
     };
   }
