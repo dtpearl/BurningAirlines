@@ -12,3 +12,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.seats {
+  width: 80px;
+  height: 60px;
+  border: solid 1px red;
+  margin: 15px;
+}
+
+.seats:hover {
+  background-color: rgba(255, 0, 0, 0.5);
+}
