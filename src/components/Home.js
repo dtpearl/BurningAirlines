@@ -8,7 +8,7 @@ class Home extends Component {
     return(
       <div>
         <h2>Welcome User</h2>
-        <Link to="/search"><button className="search">Flights</button></Link>
+        <Link to="/Search"><button className="search">Flights</button></Link>
         <hr/>
       </div>
     )
