@@ -75,7 +75,7 @@ class FlightsForm extends Component {
   }
 }
 
-class FlightsResults extends Component {s
+class FlightsResults extends Component {
   render() {
     return (
       <div>
@@ -84,10 +84,10 @@ class FlightsResults extends Component {s
             <span className='result resultTitle'>Date</span>
             <li>{ flight.date } </li>
         <span className='result resultTitle'>Flight</span>
-        <li><Link to={`/flight/${ flight.id }`}>{ flight.f_no }</Link></li>
+        <li><Link to={`/flights/${ flight.id }`}>{ flight.f_no }</Link></li>
         <span className='result resultTitle'>From > To</span>
         <li>{ flight.origin } { flight.destination }</li>
-      
+
 
           </p>
         )}
@@ -102,13 +102,13 @@ class FlightSearch extends Component {
     super();
     this.state = {
       flights: [],
+      flightID: 0,
     }
     this.fetchFlights = this.fetchFlights.bind(this);
   }
 
   fetchFlights(origin, destination) {
     axios.get('http://localhost:3000/flights.json').then( (results) => {
-
       let flightsMatch = [];
 
       for (var i = 0; i < results.data.length; i++) {
@@ -118,7 +118,7 @@ class FlightSearch extends Component {
         }
       }
       this.setState({ flights: flightsMatch });
-
+      console.log( this.state.flights );
     });
   }
 

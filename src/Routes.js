@@ -20,3 +20,5 @@ const Routes = (
 );
 
 export default Routes;
+
+// <Route path="/flights/:id/:planeid/:flightid" component={ FlightBooking } />
