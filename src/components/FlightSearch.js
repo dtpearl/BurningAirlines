@@ -88,14 +88,15 @@ class FlightsResults extends Component {
                 {
                   pathname:`/flights/${ flight.id }`,
                   state: {
-                    flightID: flight.id,            
+                    flightID: flight.id,
                   }
                 }
                 }>{ flight.f_no }</Link></li>
             <span className='result resultTitle'>From > To</span>
               <li>{ flight.origin } { flight.destination }</li>
           </p>
-        )}
+        )
+      }
       </div>
     );
   }

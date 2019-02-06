@@ -3,15 +3,15 @@ import axios from 'axios';
 import DisplaySeats from './DisplaySeats';
 
 //const SERVER_URL_FLIGHTS = 'http://localhost:3000/flights.json';
-const SERVER_URL_FLIGHT = 'http://localhost:3000/flights/1.json'
+const SERVER_URL_FLIGHT = 'http://localhost:3000/flights/'
 
 class FlightBooking extends Component {
   constructor(props) {
-    super(props);
+    super();
     this.state = {
       // Information sent from Flight search
       // Flight ID, plane information
-      planeID: 1,
+      planeID: props.planeID,
       seats: 0,
       // Information handled in FlightBooking
       seatsBooked: []
@@ -22,7 +22,9 @@ class FlightBooking extends Component {
 
 
   componentDidMount() {
-    axios.get(SERVER_URL_FLIGHT).then( (results) => {
+    const flightDataURL = `${SERVER_URL_FLIGHT}${ this.props.match.params.id }.json`;
+
+    axios.get(flightDataURL).then( (results) => {
       const flightData = results.data;
       console.log(flightData);
       this.setState({
