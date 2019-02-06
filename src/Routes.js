@@ -13,10 +13,7 @@ const Routes = (
   <Router>
     <div>
       <Route component={Home} />
-
       <Route exact path="/search" component={FlightSearch} />
-
-
       <Route path="/flights/:id/:planeid/:flightid" component={ FlightBooking } />
     </div>
   </Router>
