@@ -82,13 +82,18 @@ class FlightsResults extends Component {
         { this.props.flights.map( (flight) =>
           <p key={ flight.id }>
             <span className='result resultTitle'>Date</span>
-            <li>{ flight.date } </li>
-        <span className='result resultTitle'>Flight</span>
-        <li><Link to={`/flights/${ flight.id }`}>{ flight.f_no }</Link></li>
-        <span className='result resultTitle'>From > To</span>
-        <li>{ flight.origin } { flight.destination }</li>
-
-
+              <li>{ flight.date } </li>
+            <span className='result resultTitle'>Flight</span>
+              <li><Link to={
+                {
+                  pathname:`/flights/${ flight.id }`,
+                  state: {
+                    flightID: flight.id,            
+                  }
+                }
+                }>{ flight.f_no }</Link></li>
+            <span className='result resultTitle'>From > To</span>
+              <li>{ flight.origin } { flight.destination }</li>
           </p>
         )}
       </div>
