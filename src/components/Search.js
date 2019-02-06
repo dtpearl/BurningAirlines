@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
+import FlightsDisplay from './FlightsDisplay'
 
-
+const PlaneURL = 'https://localhost:3001/flights.json';
 
 class Search extends Component {
   constructor() {
@@ -11,6 +12,9 @@ class Search extends Component {
       from: '',
       to: '',
     }
+    this.handleInputTo = this.handleInputTo.bind(this);
+    this.handleInputFrom = this.handleInputFrom.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleInputFrom(event) {
@@ -33,26 +37,32 @@ class Search extends Component {
 
   render() {
     return(
-      <div>
-              <div className="heading">
-                <h1> Welcome to Burning Airlines</h1>
-                <h4>Enter Your Trip Details Here:</h4>
-              </div>
-            <form onSubmit={e => this.handleSubmit(e)}>
-          		<div className="form-item">
-          			<p className="formLabel"></p>
-          			<input type="text" className="form-style" placeholder="From" onChange={e => this.handleInputFrom(e)}/>
-          		</div>
-          		<div className="form-item">
-          			<p className="formLabel"></p>
-          			<input type="text" className="form-style" placeholder="To" onChange={e => this.handleInputTo(e)}/>
-          		</div>
-          		<div className="form-item">
-        		    <input type="submit" className="login pull-right" value="Submit"/>
+      <form onSubmit={ this.handleSubmit }>
 
-          		</div>
+              <label className = "search"><span className ="monospace">
+                From: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span>
+              <select value={this.state.from} onChange = {this.handleInputFrom} className="select-city">
+                  <option value="">Select...</option>
+                  <option value="sydney">Sydney</option>
+                  <option value="melbourne">Melbourne</option>
+
+                </select>
+              </label><br />
+
+              <label className = "search"><span className ="monospace">
+                To: &nbsp; &nbsp; &nbsp;</span>
+              <select value={this.state.to} onChange = {this.handleInputTo} className="select-city">
+                  <option value="">Select...</option>
+                  <option value="sydney">Sydney</option>
+                  <option value="melbourne">Melbourne</option>
+
+                </select>
+              </label><br />
+
+
+              <input type="submit" value="Search" className="res-button" />
             </form>
-        </div>
+
     )
   }
 }
