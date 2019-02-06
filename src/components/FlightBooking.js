@@ -3,7 +3,7 @@ import axios from 'axios';
 import DisplaySeats from './DisplaySeats';
 
 //const SERVER_URL_FLIGHTS = 'http://localhost:3000/flights.json';
-const SERVER_URL_FLIGHT = 'http://localhost:3000/flights/1.json'
+const SERVER_URL_FLIGHT = 'http://localhost:3000/flights/4.json'
 
 class FlightBooking extends Component {
   constructor(props) {

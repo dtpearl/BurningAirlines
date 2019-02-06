@@ -102,13 +102,13 @@ class FlightSearch extends Component {
     super();
     this.state = {
       flights: [],
+      flightID: 0,
     }
     this.fetchFlights = this.fetchFlights.bind(this);
   }
 
   fetchFlights(origin, destination) {
     axios.get('http://localhost:3000/flights.json').then( (results) => {
-
       let flightsMatch = [];
 
       for (var i = 0; i < results.data.length; i++) {
@@ -118,7 +118,7 @@ class FlightSearch extends Component {
         }
       }
       this.setState({ flights: flightsMatch });
-
+      console.log( this.state.flights );
     });
   }
 
