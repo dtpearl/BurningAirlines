@@ -17,11 +17,19 @@ class DisplaySeats extends Component {
   //
   // fetchSecrets();
 
+  saveSeat(seat) {
+    console.log('A seat was clicked');
+    console.log(seat);
+    // axios.post(POST_SERVER_URL, {})
+  }
+
   render() {
     return(
       <div>
         <h3>Seats on this flight</h3>
-        { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} onClick={ console.log(`Seat:  ${index + 1}`)}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
+          <form onSubmit={ this.saveSeat }>
+            { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} value={`X`}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
+          </form>
       </div>
     );
       // <div>

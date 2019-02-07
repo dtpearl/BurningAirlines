@@ -34,7 +34,6 @@ class FlightBooking extends Component {
        });
     });
 
-    // Send seats info to DisplaySeats (results.data...)
   }
 
 
@@ -42,7 +41,9 @@ class FlightBooking extends Component {
   render () {
     return(
       <div>
-        <h2>Burning Airlines booking system is totally coming soon</h2>
+        <h2>Burning Airlines booking system is totally free!!</h2>
+        <h3>Caution: You get what you pay for</h3>
+
         <DisplaySeats seatsBooked={ this.state.seatsBooked }/>
       </div>
     );
