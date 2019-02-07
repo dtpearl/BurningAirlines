@@ -3,6 +3,15 @@ import React, { Component } from 'react';
 class DisplaySeats extends Component {
   constructor(props) {
     super(props);
+    this.state = {
+      seatsBooked: [],
+      selectedSeat: ""
+    }
+    this.saveSeat = this.saveSeat.bind(this);
+  }
+
+  componentDidMount() {
+    this.setState({seatsBooked: this.props.seatsBooked})
   }
 
   // This should display the seats on the airplane
@@ -17,9 +26,9 @@ class DisplaySeats extends Component {
   //
   // fetchSecrets();
 
-  saveSeat(seat) {
+  saveSeat = (param) => (e) => {
     console.log('A seat was clicked');
-    console.log(seat);
+    console.log(param);
     // axios.post(POST_SERVER_URL, {})
   }
 
@@ -27,9 +36,7 @@ class DisplaySeats extends Component {
     return(
       <div>
         <h3>Seats on this flight</h3>
-          <form onSubmit={ this.saveSeat }>
-            { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} value={`X`}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
-          </form>
+            { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} value={index} onClick={this.saveSeat(index+1)}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
       </div>
     );
       // <div>
