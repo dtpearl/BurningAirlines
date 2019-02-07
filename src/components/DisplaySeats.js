@@ -36,7 +36,7 @@ class DisplaySeats extends Component {
     return(
       <div>
         <h3>Seats on this flight</h3>
-            { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} value={index} onClick={this.saveSeat(index+1)}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
+            { this.props.seatsBooked.map( (s, index) => <button className="seats" key={index} onClick={this.saveSeat(index+1)}>{`Seat ${index + 1 } is: ${s}`}</button> ) }
       </div>
     );
       // <div>
