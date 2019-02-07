@@ -38,7 +38,7 @@ class FlightsForm extends Component {
       <form onSubmit={ this.handleSubmit }>
 
               <label className = "search"><span className ="monospace">
-                From: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;  </span>
+                From: &nbsp; &nbsp; &nbsp;  </span>
               <select value={this.state.origin} onChange = {this.handleInputFrom} className="select-city">
                   <option value="">Select...</option>
                   <option value="SYD">Sydney (SYD)</option>
@@ -52,7 +52,7 @@ class FlightsForm extends Component {
               </label><br />
 
               <label className = "search"><span className ="monospace">
-                To: &nbsp; &nbsp; &nbsp;</span>
+                To: &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</span>
               <select value={this.state.destination} onChange = {this.handleInputTo} className="select-city">
                   <option value="">Select...</option>
                     <option value="SYD">Sydney (SYD)</option>
@@ -76,23 +76,33 @@ class FlightsForm extends Component {
 }
 
 class FlightsResults extends Component {
-  render() {
-    return (
-      <div>
-        { this.props.flights.map( (flight) =>
-          <p key={ flight.id }>
-            <span className='result resultTitle'>Date</span>
-              <li>{ flight.date } </li>
-            <span className='result resultTitle'>Flight</span>
-              <li><Link to={`/flights/${ flight.id }`}>{ flight.f_no }</Link></li>
-            <span className='result resultTitle'>From > To</span>
-              <li>{ flight.origin } { flight.destination }</li>
-          </p>
-        )
-      }
-      </div>
-    );
-  }
+ render() {
+   return (
+     <div className="resultContainer">
+     <table className="resultTable">
+       { this.props.flights.map( (flight) =>
+         <p key={ flight.id }>
+         <tr>
+           <th className="result resultTitle">Date</th>
+           <th className="result resultTitle">Flight</th>
+           <th className="result resultTitle">From > To</th>
+         </tr>
+         <tr>
+           <td className="result">{ flight.date } </td>
+            <td className="result">
+              <Link to={`/flights/${ flight.id }`}>
+                { flight.f_no }
+              </Link>
+            </td>
+
+            <td className="result">{ flight.origin } { flight.destination }</td>
+            </tr>
+         </p>
+       )}
+     </table>
+     </div>
+   );
+ }
 }
 
 

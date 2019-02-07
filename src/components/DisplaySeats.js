@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class DisplaySeats extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class DisplaySeats extends Component {
   saveSeat = (param) => (e) => {
     console.log('A seat was clicked');
     console.log(param);
-    // axios.post(POST_SERVER_URL, {})
+    //axios.post(POST_SERVER_URL, {})
   }
 
   render() {
