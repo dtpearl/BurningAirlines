@@ -29,7 +29,7 @@ class DisplaySeats extends Component {
 
   saveSeat = (param) => (e) => {
     console.log('A seat was clicked');
-    console.log(param);
+    alert(`You booked seat: ${param}`);
     //axios.post(POST_SERVER_URL, {})
   }
 
